@@ -21,7 +21,9 @@ func _ready():
 	$Pole1.connect("area_exited", self, "on_area_leave", [$Pole1])
 	$Pole2.connect("area_exited", self, "on_area_leave", [$Pole2])
 	$Pole3.connect("area_exited", self, "on_area_leave", [$Pole3])
+	
 	var x = $Pole1.position.x
+	
 	for i in range(nb_disks):
 		var tile = Tile.instance()
 		tile.image = image
@@ -50,30 +52,32 @@ func _input(event):
 		return
 	if selected == null:
 		return
+	print("Released :", get_global_mouse_position())
 
 	var i = 0
 	if entered == null: # reset position
 		resetPos()
 		return
-	else:
-		i = entered.get_index()
-		if len(disks[i]) > 0:
-			if selected == disks[i][-1]:
-				resetPos()
-				return
-			var frame1 = disks[i][-1].get_node("Sprite").frame
-			var frame2 = selected.get_node("Sprite").frame
-			if frame1 < frame2:
-				resetPos()
-				return
-
-	# move
 	i = entered.get_index()
+	if len(disks[i]) > 0:
+		if selected == disks[i][-1]:
+			resetPos()
+			return
+		# le dernier de la ou je veux lacher
+		var frame1 = disks[i][-1].get_node("Sprite").frame
+		# le selectionné
+		var frame2 = selected.get_node("Sprite").frame
+		if frame1 < frame2:
+			resetPos()
+			return
+	# move
 	var x = entered.position.x
 	var y = 100 + (nb_disks - len(disks[i])) * 305 / nb_disks
 	selected.position = Vector2(x, y)
 	# update
-	disks[i].append(disks[poleSelected.get_index()].pop_back())
+	# pole selected = pole d'origine
+	disks[i].append(selected)
+	disks[poleSelected.get_index()].pop_back()
 	# reset
 	entered = null
 	poleSelected = null
@@ -90,6 +94,7 @@ func on_area_enter(ent: Area2D, _in: Area2D):
 func on_area_leave(leaved: Area2D, _out: Area2D):
 	if poleSelected == null:
 		poleSelected = _out
+	
 	if entered == _out:
 		print("Left: ", _out)
 		entered = null
