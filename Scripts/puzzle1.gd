@@ -127,6 +127,4 @@ func verifPair(id):
 		premierCart=id
 
 func _on_Carte_CarteClicked(id):
-	print(id)
-	print(dico[id])
 	verifPair(id)
