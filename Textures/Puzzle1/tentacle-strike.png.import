@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tentacle-strike.png-72af055f5d038c00c22e7e204a085f4b.stex"
+path="res://.import/tentacle-strike.png-6e593481f9a80f1fc86b8a9695bbf327.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/Puzzle1/tentacle-strike.png"
-dest_files=[ "res://.import/tentacle-strike.png-72af055f5d038c00c22e7e204a085f4b.stex" ]
+source_file="res://Textures/Puzzle1/tentacle-strike.png"
+dest_files=[ "res://.import/tentacle-strike.png-6e593481f9a80f1fc86b8a9695bbf327.stex" ]
 
 [params]
 

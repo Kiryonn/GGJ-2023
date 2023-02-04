@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plant-roots.png-89a6be611f383cd55bd69c2b0ec90848.stex"
+path="res://.import/tree-roots.png-6365fd6d2dc2aa19c760b358cc66e852.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/Puzzle1/plant-roots.png"
-dest_files=[ "res://.import/plant-roots.png-89a6be611f383cd55bd69c2b0ec90848.stex" ]
+source_file="res://Textures/Puzzle1/tree-roots.png"
+dest_files=[ "res://.import/tree-roots.png-6365fd6d2dc2aa19c760b358cc66e852.stex" ]
 
 [params]
 

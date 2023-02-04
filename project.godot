@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Carte",
+"language": "GDScript",
+"path": "res://Carte.gd"
+}, {
 "base": "TileMap",
 "class": "Puzzle2",
 "language": "GDScript",
 "path": "res://Scripts/Puzzle2.gd"
 } ]
 _global_script_class_icons={
+"Carte": "",
 "Puzzle2": ""
 }
 

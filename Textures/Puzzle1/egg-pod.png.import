@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree-roots.png-6a7a783abd64d5b71ab75bc5ef473ded.stex"
+path="res://.import/egg-pod.png-464bd82d0509d79a277ab1285c09ed3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/Puzzle1/tree-roots.png"
-dest_files=[ "res://.import/tree-roots.png-6a7a783abd64d5b71ab75bc5ef473ded.stex" ]
+source_file="res://Textures/Puzzle1/egg-pod.png"
+dest_files=[ "res://.import/egg-pod.png-464bd82d0509d79a277ab1285c09ed3a.stex" ]
 
 [params]
 
