@@ -15,7 +15,7 @@ func _input_event(_viewport, event, _shape_idx):
 		return
 	if not(event.button_index == BUTTON_LEFT):
 		return
-	if  event.pressed == true and not found_pair and active:
+	if event.pressed == true and not found_pair and active:
 		emit_signal("CarteClicked", self)
 		flip()
 		

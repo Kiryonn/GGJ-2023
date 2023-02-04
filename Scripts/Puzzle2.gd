@@ -4,18 +4,12 @@ extends TileMap
 
 export (Vector2) var size
 
-var tilemap: Array
+#var tilemap: Array
 # Vector2 position: Vector3 (flip_h, flip_v, transpose) 
 var way: Dictionary
 
 
 func _ready():
-	# instantiate tilemap
-	tilemap = []
-	for i in range(size.x):
-		tilemap.append([])
-		for j in range(size.y):
-			tilemap[-1].append(-1)
 	createPath()
 
 
@@ -35,7 +29,8 @@ func createTile(from) -> void:
 #	tile 2 = t shape
 	if from == Vector2(size.x-1, size.y-1):
 		return
-	var previous = tilemap[from.x][from.y]
+	# the previous tile
+	var previous = get_cellv(from)
 	var positions = []
 	match previous:
 		0: # straight line
@@ -128,3 +123,7 @@ func rotateTile(pos: Vector2):
 			var flip_h = not(is_cell_x_flipped(x, y) or is_cell_transposed(x, y) or is_cell_y_flipped(x, y))
 			var transpose = is_cell_y_flipped(x, y) or flip_h
 			set_cellv(pos, 2, flip_h, flip_v, transpose)
+
+class Tile:
+	var start: int
+	var end: Array
