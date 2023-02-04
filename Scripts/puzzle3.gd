@@ -108,3 +108,5 @@ func isWin():
 	caseVide=[]
 	win=true
 	emit_signal("puzzle")
+	
+	

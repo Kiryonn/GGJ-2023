@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The root of time"
-run/main_scene="res://Scenes/main.tscn"
+run/main_scene="res://Scenes/Puzzle4.tscn"
 config/icon="res://icon.png"
 
 [display]
