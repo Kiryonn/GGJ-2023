@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Carte",
+"language": "GDScript",
+"path": "res://Carte.gd"
+} ]
+_global_script_class_icons={
+"Carte": ""
+}
+
 [application]
 
 config/name="The root of time"
+run/main_scene="res://Scenes/main.tscn"
 config/icon="res://icon.png"
 
 [gui]
