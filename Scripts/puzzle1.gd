@@ -6,7 +6,7 @@ export (int) var nbCart
 export (Array, Texture) var images
 export (Texture) var back
 
-signal puzzle1
+signal puzzle
 
 # Declare member variables here. Examples:
 # var a = 2
