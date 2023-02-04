@@ -16,13 +16,14 @@ signal puzzle
 var dico ={}
 var id =0
 var pairManquante=[]
+
+
 func cloneList(list):
 	var l=[]
 	for carte in list:
 		
 		var clone = carte.duplicate()
 		add_child(clone)
-		print(carte)
 		dico[carte]= id
 		dico[clone]= id
 		pairManquante.append(id)
@@ -33,12 +34,10 @@ func cloneList(list):
 	return l
 
 
-func something():
-	pass
 
 
 var list
-
+var timer : Timer
 
 func _ready():
 	randomize()
@@ -75,6 +74,8 @@ func _ready():
 			y+=100
 			x=200
 			xl=0
+			
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -91,40 +92,55 @@ func shuffle(list):
 			list[j]=p
 
 
-
+var time =0
+var appel = []
 var premierCart
 var deuxiemCart
+var antiSpam=false
 
 
 func isend(list):
 	if len(list)>0:
 		return
 	else:
-		print("end")
 		emit_signal("puzzle")
+
+
 
 func verifPair(id):
 	if(premierCart!= null):
-		if(deuxiemCart!= null):
-			if(dico[deuxiemCart]==dico[premierCart]):
-				deuxiemCart.found_pair=true
-				premierCart.found_pair=true
-				pairManquante.erase(dico[deuxiemCart])
-				deuxiemCart=null
-				premierCart=id
-				isend(pairManquante)
-			else:
-				deuxiemCart.revert()
-				premierCart.revert()
-				
-				premierCart=id
-				deuxiemCart=null
+		
+		if(dico[id]==dico[premierCart]):
+			id.found_pair=true
+			premierCart.found_pair=true
+			pairManquante.erase(dico[id])
+			id=null
+			premierCart=id
+			isend(pairManquante)
+			antiSpam=false
 		else:
 			deuxiemCart=id
-			if(len(pairManquante)==1):
-				verifPair(null)
+			appel = [premierCart, deuxiemCart]
+			premierCart=null
+			deuxiemCart=null
+			time=0
+			
 	else:
 		premierCart=id
+		antiSpam=false
 
 func _on_Carte_CarteClicked(id):
+	if(antiSpam):
+		id.revert()
+		return
+	antiSpam = true
 	verifPair(id)
+
+func _physics_process(delta):
+	if appel != []:
+		time += delta
+		if(time>0.5):
+			appel[0].revert()
+			appel[1].revert()
+			appel = []
+			antiSpam=false
