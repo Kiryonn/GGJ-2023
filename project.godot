@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The root of time"
-run/main_scene="res://Scenes/Node2D.tscn"
+run/main_scene="res://Scenes/main.tscn"
 config/icon="res://icon.png"
 
 [gui]
