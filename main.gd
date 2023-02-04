@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var memorie = load("res://Scenes/Node2D.tscn")
+	var memorie = load("res://Scenes/Puzzle1.tscn")
 	var instance = memorie.instance()
 	
 	add_child(instance)
