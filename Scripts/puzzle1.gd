@@ -1,12 +1,12 @@
 extends Node2D
 
 
-export (String) var string
-export (int) var nbCart
+#export (String) var string
+#export (int) var nbCart
 export (Array, Texture) var images
 export (Texture) var back
 
-signal puzzle1
+signal puzzle
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -101,7 +101,7 @@ func isend(list):
 		return
 	else:
 		print("end")
-		emit_signal("puzzle1")
+		emit_signal("puzzle")
 
 func verifPair(id):
 	if(premierCart!= null):
@@ -127,6 +127,4 @@ func verifPair(id):
 		premierCart=id
 
 func _on_Carte_CarteClicked(id):
-	print(id)
-	print(dico[id])
 	verifPair(id)

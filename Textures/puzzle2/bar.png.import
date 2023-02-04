@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<<< HEAD:Textures/puzzle2/bar.png.import
 path="res://.import/bar.png-b692fd9812305b6c95e7640dc3239ca9.stex"
+========
+path="res://.import/parmecia.png-c546039cd061aa27bfb7c989abfecbd5.stex"
+>>>>>>>> feature/puzzle3:Textures/Puzzle1/parmecia.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Textures/puzzle2/bar.png.import
 source_file="res://Textures/puzzle2/bar.png"
 dest_files=[ "res://.import/bar.png-b692fd9812305b6c95e7640dc3239ca9.stex" ]
+========
+source_file="res://Textures/Puzzle1/parmecia.png"
+dest_files=[ "res://.import/parmecia.png-c546039cd061aa27bfb7c989abfecbd5.stex" ]
+>>>>>>>> feature/puzzle3:Textures/Puzzle1/parmecia.png.import
 
 [params]
 
