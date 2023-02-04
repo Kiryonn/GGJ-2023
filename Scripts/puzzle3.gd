@@ -31,7 +31,7 @@ func _ready():
 		var x = 100 + (i % int(cut.x)) * 65
 		var y = 100 + i / int(cut.y) * 65
 		instance.position = Vector2(x, y)
-		instance.scale = Vector2(4, 4)
+		instance.scale = Vector2(float(64)/image.get_width(), float(64)/image.get_height()) * 4
 		add_child(instance)
 		instance.get_node("Hitbox").shape.extents = sprite.get_rect().size / 2
 		instance.connect("TileClicked", self, "on_click")
