@@ -53,4 +53,3 @@
 tile_set = SubResource( 1 )
 format = 1
 script = ExtResource( 1 )
-size = Vector2( 16, 9 )
