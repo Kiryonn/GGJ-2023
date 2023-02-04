@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scripts/Puzzle1.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/puzzle1.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Puzzle1/family-tree.png" type="Texture" id=2]
+[ext_resource path="res://Textures/Puzzle1/egg-pod.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Puzzle1/chicken.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Puzzle1/plant-roots.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Puzzle1/parmecia.png" type="Texture" id=6]
+[ext_resource path="res://Textures/Puzzle1/tentacle-strike.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Puzzle1/root-tip.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Puzzle1/tree-roots.png" type="Texture" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
-images = [ null, null, null, null, null, null, null, null ]
+images = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ]
 back = ExtResource( 10 )

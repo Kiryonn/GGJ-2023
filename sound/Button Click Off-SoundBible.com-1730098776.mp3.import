@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Button Click Off-SoundBible.com-1730098776.mp3-0cbc29d11a25b71872a466bc8221bec3.mp3str"
+
+[deps]
+
+source_file="res://sound/Button Click Off-SoundBible.com-1730098776.mp3"
+dest_files=[ "res://.import/Button Click Off-SoundBible.com-1730098776.mp3-0cbc29d11a25b71872a466bc8221bec3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

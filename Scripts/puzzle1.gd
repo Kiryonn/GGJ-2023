@@ -1,8 +1,8 @@
 extends Node2D
 
 
-export (String) var string
-export (int) var nbCart
+#export (String) var string
+#export (int) var nbCart
 export (Array, Texture) var images
 export (Texture) var back
 
@@ -101,7 +101,7 @@ func isend(list):
 		return
 	else:
 		print("end")
-		emit_signal("puzzle1")
+		emit_signal("puzzle")
 
 func verifPair(id):
 	if(premierCart!= null):
