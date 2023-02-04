@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chicken.png-d6c41f34c8b5cf73feb87d929eb2c37e.stex"
+path="res://.import/parmecia.png-c546039cd061aa27bfb7c989abfecbd5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/Puzzle1/chicken.png"
-dest_files=[ "res://.import/chicken.png-d6c41f34c8b5cf73feb87d929eb2c37e.stex" ]
+source_file="res://Textures/Puzzle1/parmecia.png"
+dest_files=[ "res://.import/parmecia.png-c546039cd061aa27bfb7c989abfecbd5.stex" ]
 
 [params]
 

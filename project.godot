@@ -9,13 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
+"base": "Reference",
 "class": "Carte",
 "language": "GDScript",
-"path": "res://Carte.gd"
+"path": "res://Scripts/Carte.gd"
+}, {
+"base": "Area2D",
+"class": "Tile",
+"language": "GDScript",
+"path": "res://Scripts/puzzle3Tile.gd"
 } ]
 _global_script_class_icons={
-"Carte": ""
+"Carte": "",
+"Tile": ""
 }
 
 [application]

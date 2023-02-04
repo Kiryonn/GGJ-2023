@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/parmecia.png-a91025600c7cc892263968316d71e203.stex"
+path="res://.import/family-tree.png-4cb0e82a3387d7b18a452062d7c92109.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/Puzzle1/parmecia.png"
-dest_files=[ "res://.import/parmecia.png-a91025600c7cc892263968316d71e203.stex" ]
+source_file="res://Textures/Puzzle1/family-tree.png"
+dest_files=[ "res://.import/family-tree.png-4cb0e82a3387d7b18a452062d7c92109.stex" ]
 
 [params]
 
