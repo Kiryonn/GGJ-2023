@@ -14,9 +14,6 @@ func _ready():
 	
 	add_child(instance)
 	instance.connect("puzzle",self,"asEnd")
-	
-
-
 
 
 func asEnd():

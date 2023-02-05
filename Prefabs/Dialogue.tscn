@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Dialogue.gd" type="Script" id=2]
+
+[node name="Dialogue" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+margin_top = 500.0
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[node name="Text" type="RichTextLabel" parent="ColorRect"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -99.0
+margin_right = 1024.0
+bbcode_enabled = true
+bbcode_text = "[b]Name[/b]
+	some bs text"
+text = "Name
+	some bs text"

@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "Action",
+"language": "GDScript",
+"path": "res://Scripts/data/action.gd"
+}, {
 "base": "Area2D",
 "class": "Carte",
 "language": "GDScript",
 "path": "res://Scripts/Carte.gd"
+}, {
+"base": "Resource",
+"class": "DialogueRes",
+"language": "GDScript",
+"path": "res://Scripts/data/dialogueRes.gd"
 }, {
 "base": "TileMap",
 "class": "Puzzle2",
@@ -24,22 +34,30 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Puzzle4.gd"
 }, {
+"base": "Resource",
+"class": "Show",
+"language": "GDScript",
+"path": "res://Scripts/data/show.gd"
+}, {
 "base": "Area2D",
 "class": "Tile",
 "language": "GDScript",
 "path": "res://Scripts/puzzle3Tile.gd"
 } ]
 _global_script_class_icons={
+"Action": "",
 "Carte": "",
+"DialogueRes": "",
 "Puzzle2": "",
 "Puzzle4": "",
+"Show": "",
 "Tile": ""
 }
 
 [application]
 
 config/name="The root of time"
-run/main_scene="res://Scenes/Puzzle4.tscn"
+run/main_scene="res://Scenes/main.tscn"
 config/icon="res://icon.png"
 
 [display]

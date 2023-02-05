@@ -18,8 +18,6 @@ func _input_event(_viewport, event, _shape_idx):
 	if event.pressed == true and not found_pair and active:
 		flip()
 		emit_signal("CarteClicked", self)
-		
-		
 
 var active=true
 
