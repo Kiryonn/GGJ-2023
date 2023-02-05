@@ -1,7 +1,37 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Prefabs/Dialogue.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Data/action.tres" type="Resource" id=2]
+[ext_resource path="res://Scripts/Data/anim.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Data/action.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Data/enter.gd" type="Script" id=4]
+[ext_resource path="res://Textures/spirit guardian.png" type="Texture" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+name = "gaig"
+image = ExtResource( 5 )
+scale = Vector2( 0.5, 0.5 )
+pos = Vector2( 150, 430 )
+is_flipped = false
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+type = "enter"
+data = SubResource( 1 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 2 )
+character = ""
+animation = ""
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 3 )
+type = ""
+data = SubResource( 7 )
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 3 )
+type = ""
 
 [node name="Dialogue" instance=ExtResource( 1 )]
-actions = [ ExtResource( 2 ), ExtResource( 2 ) ]
+actions = [ SubResource( 2 ), SubResource( 4 ), SubResource( 6 ) ]
