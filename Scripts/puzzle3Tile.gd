@@ -1,4 +1,4 @@
-class_name Tile
+class_name Puzzle3Tile
 extends Area2D
 
 

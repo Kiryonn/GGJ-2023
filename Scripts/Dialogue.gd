@@ -3,6 +3,7 @@ extends Node2D
 
 signal finished
 
+export (Resource) var Character
 export (Array, Resource) var actions = []
 var index = 0
 var is_waiting_for_click = false
@@ -12,11 +13,8 @@ var entered = {}
 
 
 func _ready():
-	set_physics_process(false)
-	yield(get_tree().root.get_child(get_tree().root.get_child_count()-1), "ready")
+	$Timer.connect("timeout", self, "stopWaiting")
 
-	set_physics_process(true)
-	
 
 func _physics_process(_delta):
 	if is_waiting_for_time:
@@ -43,7 +41,7 @@ func execAction(action_data):
 		"talk":
 			talk(data.name, data.message)
 		"enter":
-			showImage(data.name, data.image, data.scale, data.pos, data.is_flipped)
+			enter(data.name, data.image, data.scale, data.pos, data.is_flipped)
 		"leave":
 			leave(data.name)
 		"show":
@@ -52,35 +50,33 @@ func execAction(action_data):
 			hideImage(data["name"])
 		"wait":
 			waitForTime(data.time)
-		"hurt":
-			pass
-		"jump":
-			pass
-		"die":
-			pass
+		"anim":
+			match data.animation:
+				"hurt": entered[data].hurt()
+				"jump": entered[data].jump()
+				"die": entered[data].die()
 
 func talk(name: String, message: String):
+	$ColorRect/Text.text = "[b]{name}[/b]\n\t{message}".format(name, message)
 	is_waiting_for_click = true
 
 func enter(name: String, image: Texture, imageScale: Vector2, imagePos: Vector2, is_flipped: bool):
-	var sprite = chargeImage(name, image, imageScale, imagePos, is_flipped)
-	entered[name] = sprite
+	var character = Character.instance()
+	character.name = name
+	character.texture = image
+	character.scale = imageScale
+	character.position = imagePos
+	character.flip_h = is_flipped
+	add_child(character)
+	move_child(character, $ColorRect.get_index())
+	entered[name] = character
 
 func leave(name: String):
-	pass
+	if entered.has(name):
+		entered[name].queue_free()
+		entered.erase(name)
 
 func showImage(name: String, image: Texture, imageScale: Vector2, imagePos: Vector2, is_flipped: bool):
-	var sprite = chargeImage(name, image, imageScale, imagePos, is_flipped)
-	showed[name] = sprite
-
-func hideImage(name: String):
-	get_node(name).text = "mioau"
-
-func waitForTime(time):
-	is_waiting_for_time = true
-	$Timer
-
-func chargeImage(name: String, image: Texture, imageScale: Vector2, imagePos: Vector2, is_flipped: bool):
 	var sprite = Sprite.new()
 	sprite.name = name
 	sprite.texture = image
@@ -89,4 +85,18 @@ func chargeImage(name: String, image: Texture, imageScale: Vector2, imagePos: Ve
 	sprite.flip_h = is_flipped
 	add_child(sprite)
 	move_child(sprite, $ColorRect.get_index())
-	return sprite
+	showed[name] = sprite
+
+func hideImage(name: String):
+	if showed.has(name):
+		showed[name].queue_free()
+		showed.erase(name)
+
+func waitForTime(time):
+	is_waiting_for_time = true
+	$Timer.set_wait_time(3)
+	$Timer.set_one_shot(true)
+	$Timer.start()
+
+func stopWaiting():
+	is_waiting_for_time = false

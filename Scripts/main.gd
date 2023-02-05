@@ -17,11 +17,10 @@ func _ready():
 
 
 func asEnd():
-	print("j'ai compris que ta fini")
 	instance.queue_free()
 	if index >= len(scenes):
 		return
 	instance = scenes[index].instance()
 	index += 1
-	instance.connect("puzzle",self,"asEnd")
 	add_child(instance)
+	instance.connect("finished",self,"asEnd")

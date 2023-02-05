@@ -1,12 +1,11 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/Data/enter.gd" type="Script" id=1]
-[ext_resource path="res://Textures/spirit guardian.png" type="Texture" id=2]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource( 1 )
-name = "Spirit Guardian"
-image = ExtResource( 2 )
-scale = Vector2( 0.5, 0.5 )
-pos = Vector2( 130, 450 )
+name = ""
+scale = Vector2( 0, 0 )
+pos = Vector2( 0, 0 )
 is_flipped = false

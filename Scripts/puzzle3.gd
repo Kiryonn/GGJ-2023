@@ -108,5 +108,7 @@ func isWin():
 	caseVide=[]
 	win=true
 	emit_signal("finished")
-	
-	
+
+
+func _on_Button_pressed():
+	emit_signal("finished")

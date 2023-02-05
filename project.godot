@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Data/action.gd"
 }, {
+"base": "Resource",
+"class": "Anim",
+"language": "GDScript",
+"path": "res://Scripts/Data/anim.gd"
+}, {
 "base": "Area2D",
 "class": "Carte",
 "language": "GDScript",
 "path": "res://Scripts/Carte.gd"
+}, {
+"base": "Sprite",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Scripts/Character.gd"
 }, {
 "base": "Node2D",
 "class": "Dialogue",
@@ -34,24 +44,32 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Puzzle2.gd"
 }, {
+"base": "Area2D",
+"class": "Puzzle3Tile",
+"language": "GDScript",
+"path": "res://Scripts/puzzle3Tile.gd"
+}, {
 "base": "Node2D",
 "class": "Puzzle4",
 "language": "GDScript",
 "path": "res://Scripts/Puzzle4.gd"
 }, {
-"base": "Area2D",
-"class": "Tile",
+"base": "Resource",
+"class": "Wait",
 "language": "GDScript",
-"path": "res://Scripts/puzzle3Tile.gd"
+"path": "res://Scripts/Data/wait.gd"
 } ]
 _global_script_class_icons={
 "Action": "",
+"Anim": "",
 "Carte": "",
+"Character": "",
 "Dialogue": "",
 "Enter": "",
 "Puzzle2": "",
+"Puzzle3Tile": "",
 "Puzzle4": "",
-"Tile": ""
+"Wait": ""
 }
 
 [application]

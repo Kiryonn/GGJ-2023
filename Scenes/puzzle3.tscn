@@ -9,3 +9,12 @@ script = ExtResource( 2 )
 cut = Vector2( 4, 4 )
 image = ExtResource( 1 )
 Tile = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 841.0
+margin_top = 517.0
+margin_right = 950.0
+margin_bottom = 554.0
+text = "SKIP"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
