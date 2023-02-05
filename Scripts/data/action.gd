@@ -1,6 +1,5 @@
-class_name Action
 extends Resource
+class_name Action
 
-# type = show, come, leave
 export (String) var type
 export (Resource) var data

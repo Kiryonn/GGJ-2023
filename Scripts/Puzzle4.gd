@@ -2,7 +2,7 @@ class_name Puzzle4
 extends Node2D
 # this will be an hanoi tower
 
-signal puzzle
+signal finished
 
 export (Texture) var image
 export (Resource) var Tile
@@ -111,4 +111,4 @@ func resetPos():
 	selected = null
 
 func victory():
-	emit_signal("puzzle")
+	emit_signal("finished")

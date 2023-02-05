@@ -4,7 +4,7 @@ export (Vector2) var cut
 export (Texture) var image
 export (Resource) var Tile
 
-signal puzzle
+signal finished
 
 var positions = {}
 var case = {}
@@ -107,6 +107,6 @@ func isWin():
 	changeFrame(caseVide,x*y-1)
 	caseVide=[]
 	win=true
-	emit_signal("puzzle")
+	emit_signal("finished")
 	
 	

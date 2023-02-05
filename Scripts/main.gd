@@ -13,7 +13,7 @@ func _ready():
 	index += 1
 	
 	add_child(instance)
-	instance.connect("puzzle",self,"asEnd")
+	instance.connect("finished",self,"asEnd")
 
 
 func asEnd():

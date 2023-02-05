@@ -6,7 +6,7 @@ extends Node2D
 export (Array, Texture) var images
 export (Texture) var back
 
-signal puzzle
+signal finished
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -103,7 +103,7 @@ func isend(list):
 	if len(list)>0:
 		return
 	else:
-		emit_signal("puzzle")
+		emit_signal("finished")
 
 
 

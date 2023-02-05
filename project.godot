@@ -12,17 +12,22 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Action",
 "language": "GDScript",
-"path": "res://Scripts/data/action.gd"
+"path": "res://Scripts/Data/action.gd"
 }, {
 "base": "Area2D",
 "class": "Carte",
 "language": "GDScript",
 "path": "res://Scripts/Carte.gd"
 }, {
-"base": "Resource",
-"class": "DialogueRes",
+"base": "Node2D",
+"class": "Dialogue",
 "language": "GDScript",
-"path": "res://Scripts/data/dialogueRes.gd"
+"path": "res://Scripts/Dialogue.gd"
+}, {
+"base": "Resource",
+"class": "Enter",
+"language": "GDScript",
+"path": "res://Scripts/Data/enter.gd"
 }, {
 "base": "TileMap",
 "class": "Puzzle2",
@@ -34,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Puzzle4.gd"
 }, {
-"base": "Resource",
-"class": "Show",
-"language": "GDScript",
-"path": "res://Scripts/data/show.gd"
-}, {
 "base": "Area2D",
 "class": "Tile",
 "language": "GDScript",
@@ -47,10 +47,10 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Action": "",
 "Carte": "",
-"DialogueRes": "",
+"Dialogue": "",
+"Enter": "",
 "Puzzle2": "",
 "Puzzle4": "",
-"Show": "",
 "Tile": ""
 }
 
