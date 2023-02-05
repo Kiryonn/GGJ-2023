@@ -17,7 +17,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	if is_waiting_for_time:
+	if is_waiting_for_time or is_waiting_for_click:
 		return
 	if index < len(actions):
 		execAction(actions[index])
@@ -51,10 +51,11 @@ func execAction(action_data):
 		"wait":
 			waitForTime(data.time)
 		"anim":
+			print(data.animation)
 			match data.animation:
-				"hurt": entered[data].hurt()
-				"jump": entered[data].jump()
-				"die": entered[data].die()
+				"hurt": entered[data.character].hurt()
+				"jump": entered[data.character].jump()
+				"die": entered[data.character].die()
 
 func talk(name: String, message: String):
 	$ColorRect/Text.text = "[b]{name}[/b]\n\t{message}".format(name, message)
@@ -70,6 +71,7 @@ func enter(name: String, image: Texture, imageScale: Vector2, imagePos: Vector2,
 	add_child(character)
 	move_child(character, $ColorRect.get_index())
 	entered[name] = character
+	is_waiting_for_click = true
 
 func leave(name: String):
 	if entered.has(name):

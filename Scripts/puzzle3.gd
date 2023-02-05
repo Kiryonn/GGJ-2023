@@ -28,8 +28,8 @@ func _ready():
 		sprite.hframes = cut.x
 		sprite.vframes = cut.y
 		sprite.frame = i
-		var x = 100 + (i % int(cut.x)) * 65
-		var y = 100 + i / int(cut.y) * 65
+		var x = 200 + (i % int(cut.x)) * 65
+		var y = 172 + i / int(cut.y) * 65
 		instance.position = Vector2(x, y)
 		instance.scale = Vector2(float(64)/image.get_width(), float(64)/image.get_height()) * 4
 		add_child(instance)
@@ -42,7 +42,6 @@ func _ready():
 	caseVide=x*y-1
 	case[caseVide].visible=false
 	Validecase()
-	print(caseValide)
 	melange()
 	start=true
 
@@ -76,7 +75,6 @@ func melange():
 
 func actionCase(id):
 	if(positions[id] in caseValide):
-		print(caseValide)
 		case[caseVide].visible=true
 		id.visible=false
 
@@ -84,24 +82,20 @@ func actionCase(id):
 		caseVide=positions[id]
 		Validecase()
 		isWin()
-#	print(caseValide, " / ", positions[id])
 
 
 func on_click(id):
 	if(win):
 		return
-	print(positions[id])
 	actionCase(id)
 
 func isWin():
 	if(start!=true):
 		return
 	if(caseVide != x*y-1):
-#		print("la case vide est ",caseVide)
 		return
 	for i in range(x*y-1):
 		if(case[i].get_node("Sprite").frame!=i):
-			print("la case est pas bonne",i)
 			return
 	case[caseVide].visible=true
 	changeFrame(caseVide,x*y-1)
