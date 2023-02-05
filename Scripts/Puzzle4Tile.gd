@@ -11,7 +11,7 @@ func _ready():
 
 func _on_Sprite_ready():
 	$Sprite.texture = image
-	var scale = 300 / image.get_height()
+	var scale = float(300) / image.get_height()
 	$Sprite.scale = Vector2(scale, scale)
 	$Hitbox.shape.extents = $Sprite.get_rect().size * scale / 2
 
